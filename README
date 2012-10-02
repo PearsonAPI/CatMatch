@@ -1,0 +1,13 @@
+CatMatch - an html5 game
+========================
+
+This is a simple memory matching game created to show at AppsWorld 2012, http://www.apps-world.net
+
+It was going to be a start from scratch game, but I soon realised it wasn't possible to code the whole thing in 30 mins !
+
+So, starting from a very basic html page and some simple css we're going to write the code needed to turn it into a game.
+
+If you want to try this out after the event then you will need to register for an API key at http://developer.pearson.com
+
+Enjoy
+@dgem / @PearsonAPI
