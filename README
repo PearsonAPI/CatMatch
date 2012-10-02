@@ -11,3 +11,17 @@ If you want to try this out after the event then you will need to register for a
 
 Enjoy
 @dgem / @PearsonAPI
+
+1. Basic html layout
+
+This is just some html containing links to resources we will use. We will code catmatch.js later. The dkimages.js script is 
+a reusable module for invoking the dkimages.com API, feel free to clone/fork as you wish. The css is obviously for styling.
+The two external libraries are: jQuery & ICanHaz. You may not have come across ICanHaz, it allows you to template html in a
+html file, using mustache and so easily add html elements into your dom without worring about long html strings in code.
+
+The body of the html is four sections:
+  welcome screen
+  initialisation screen
+  main game screen
+  play again screen
+
