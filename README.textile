@@ -1,0 +1,23 @@
+h1. CatMatch - an html5 game
+
+h2. Intro
+
+This is a simple memory matching game created to show at AppsWorld 2012, http://www.apps-world.net 
+It was going to be a start from scratch game, but I soon realised it wasn't possible to code the whole thing in 30 mins !
+So, starting from a very basic html page and some simple css we're going to write the code needed to turn it into a game.
+If you want to try this out after the event then you will need to register for an API key at http://developer.pearson.com
+
+Enjoy
+@dgem / @PearsonAPI
+
+h2. Starting point
+
+h3. Basic html layout
+
+This is just some html containing links to resources we will use. We will code catmatch.js later. The dkimages.js script is a reusable module for invoking the dkimages.com API, feel free to clone/fork as you wish. The css is obviously for styling.  The two external libraries are: jQuery & ICanHaz. You may not have come across ICanHaz, it allows you to template html in a html file, using mustache and so easily add html elements into your dom without worring about long html strings in code.  
+The body of the html is four sections:
+* welcome screen
+* initialisation screen
+* main game screen
+* play again screen
+
