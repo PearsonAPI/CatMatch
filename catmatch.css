@@ -1,0 +1,57 @@
+/* Reset */
+* {
+     vertical-align: baseline;
+     font-family: Helvetica, sans-serif;
+     font-size: 12pt;
+     color: black;
+     text-decoration: none;
+     border: none;
+     padding: 0;
+     margin: auto;
+}
+
+.screen {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.padding {
+  height: 35%;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3em;
+  margin-bottom: 0.5em;
+}
+
+p {
+  text-align: center;
+}
+
+a {
+  font-size: 2em;
+  background-color: skyblue;
+  padding: 0.5em 1.5em;
+  border-radius: 0.25em;
+}
+
+ul {
+  display: block;
+  list-style: none;
+}
+
+li {
+  width: 22%;
+  height: 30%;
+  margin: 1% 1.5%;
+  float: left;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
