@@ -67,5 +67,38 @@ h4. catmatch.js
 
 The main flow of the game looks like this:
 
-We cache the results of calling the 'get me a list of images of cats' call, which is stored in the module scoped deck variable.
+We cache the results of calling the 'get me a list of images of cats' call, which is stored in the module scoped deck variable. It's quite straight forwad code, a couple of bit worth mentioning:
+
+When layout the cards we use the ICanHaz library to generate html based on the following template (in @catmatch.html@)
+
+bc.    <script type="text/html" id="cards">
+      {{#cards}}
+        <li class="card" data-imageid="{{id}}">
+          <img src="{{url}}&size=qvga" class="front" alt="{{caption}}">
+          <img src="back.png" class="back">
+        </li>
+      {{/cards}}
+    </script>
+
+The @layoutCards()@ method invokes the template, passing in the cards to lay out. It then clears any items in the list (from a previous game) and inserts the html generated from the template. Lastly each card is made clickable.
+
+bc.  function layout(cards) {
+    var cardsHtml = ich.cards({cards: cards});
+    $('#board').empty();
+    $('#board').html(cardsHtml);
+    $('li').click(turnCard);
+  }
+
+When a user clicks the card we toggle a class on the @<li>@ for the card, this triggers it to be turned in 3d (see @catmatch.css@) and then after a slight delay (which allows the transition to complete) we check the card that has been flipped over.
+
+bc.  function turnCard(evtObj) {
+    var card = evtObj.currentTarget;
+    $(card).toggleClass('flipped');
+    setTimeout( function() {
+      checkTurned(card); },
+      500
+    );
+  }
+
+I hope this is more than enough to get you started with the dkimages.com API, feel free to ask questions :)
 
