@@ -2,22 +2,61 @@ h1. CatMatch - an html5 game
 
 h2. Intro
 
-This is a simple memory matching game created to show at AppsWorld 2012, http://www.apps-world.net 
-It was going to be a start from scratch game, but I soon realised it wasn't possible to code the whole thing in 30 mins !
-So, starting from a very basic html page and some simple css we're going to write the code needed to turn it into a game.
-If you want to try this out after the event then you will need to register for an API key at http://developer.pearson.com
+This is a simple memory matching game, we taught people how to code it during AppsWorld 2012, http://www.apps-world.net
 
-Enjoy
-@dgem / @PearsonAPI
+It uses some features which may not be available in your default browser, so we'd recommend either the latest versions of "Mozilla Firefox":htto://www.mozilla.org/firefox , Google Chrome, or Safari browers. Personally I've not tried with internet explorer
 
-h2. Starting point
+Please note you will need to put in your API key in order for the game to work. You will need to modify the catmatch.js source code in change the folloiwng section to include your API key.
 
-h3. Basic html layout
+Enjoy, if you come up with improvements please do send us a pull request. We'd like to keep the codebase as small as possible so that folks with little or no coding experience can download it an not feel daunted.
 
-This is just some html containing links to resources we will use. We will code catmatch.js later. The dkimages.js script is a reusable module for invoking the dkimages.com API, feel free to clone/fork as you wish. The css is obviously for styling.  The two external libraries are: jQuery & ICanHaz. You may not have come across ICanHaz, it allows you to template html in a html file, using mustache and so easily add html elements into your dom without worring about long html strings in code.  
-The body of the html is four sections:
-* welcome screen
-* initialisation screen
-* main game screen
-* play again screen
+h2. The Code
+
+There are less than 250 lines in the game, including many black lines, html and css. In short we think it is quite compact. It could be made even smaller, but this might start affecting how easy it is to read. There are only four files:
+* catmatch.html
+* catmatch.js
+* catmatch.css
+* dkimages.js
+
+h3. catmatch.html
+
+In the @<head>@ section we declare our dependencies:
+* "jQuery.js":http://jquery.com
+* "ICanHaz.js":http://icanhazjs.com to help us generate html at runtime
+* catmatch.css for styling our game
+* dkimages.js a simple client library to call the dkimages.com API
+* catmatch.js the game code
+
+The @<head>@ also contains two inline @<script>@ sections, the first gets jQuery to initalise our game and the second uses moustache to allow us to easily generate the list of cards we need to show.
+
+The body of the html contains screens:
+* welcome
+* loading
+* main game
+* play again
+
+These are enclosed in @<div>@ tags
+
+h3. catmatch.css
+This styles our game, sets font sizes etc and all the stuff normally done with CSS. The one thing that is worth highlighting is the use of the browser vendor extentions which enable us to flip the cards.
+
+For example, the card is flipped by turning it 180 degrees on its Y axis (in 3d) and hiding any image that is faced down. This is done using the following css:
+
+li {
+  -moz-transform-style: preserve-3d;
+  -moz-transition: 0.5s;
+}
+
+img {
+  -moz-backface-visibility: hidden;
+}
+
+.front {
+  -moz-transform: rotateY(180deg);
+}
+
+.flipped {
+  -moz-transform: rotateY(180deg);
+}
+
 

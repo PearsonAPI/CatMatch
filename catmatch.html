@@ -7,6 +7,20 @@
     <script src="icanhaz.js"></script>
     <script src="dkimages.js"></script>
     <script src="catmatch.js"></script>
+
+    <script>
+      $(function () { cm.init(); });
+    </script>
+
+    <script type="text/html" id="cards">
+      {{#cards}}
+        <li class="card" data-imageid="{{id}}">
+          <img src="{{url}}&size=qvga" class="front" alt="{{caption}}">
+          <img src="back.png" class="back">
+        </li>
+      {{/cards}}
+    </script>
+
   </head>
 
   <body>
