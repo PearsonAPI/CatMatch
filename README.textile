@@ -59,9 +59,13 @@ img {
   -moz-transform: rotateY(180deg);
 }
 
+h3. dkimages.js
 
+This code seperates the calling of the API from the game code. Given how brief the code is, it could easily be included in the main @catmatch.js@ source. Keeping the code seperate mean the client library could be easily used by another app or if the API changes then all the change could be contained in this file. The code itself is a simple ajax call using jQuery, when a sucessful response is received it will call back into the game code using the @data_handler@
 
-ApiKey 9ea853301b84a3e364e7579af87be177 
+h4. catmatch.js
 
-(will be switched off later today)
+The main flow of the game looks like this:
+
+We cache the results of calling the 'get me a list of images of cats' call, which is stored in the module scoped deck variable.
 
