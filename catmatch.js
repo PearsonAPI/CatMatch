@@ -1,11 +1,11 @@
 var cm = (function() {
   var cm={};
 
-  var deck = null;
-  var apikey = null; 
+  var deck; 
+  var apikey = null; // set your apikey here ! 
   var numPairs = 6;
-  var firstTurned = null;
-  var pairsFound = 0;
+  var firstTurned;
+  var pairsFound;
 
   cm.init = function() {
     $('#welcome').fadeIn('fast');

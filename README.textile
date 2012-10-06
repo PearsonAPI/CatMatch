@@ -42,19 +42,20 @@ This styles our game, sets font sizes etc and all the stuff normally done with C
 
 For example, the card is flipped by turning it 180 degrees on its Y axis (in 3d) and hiding any image that is faced down. This is done using the following css:
 
-li {
+bc. /* Use 3d transformations */
+ li {
   -moz-transform-style: preserve-3d;
   -moz-transition: 0.5s;
 }
-
+/* when facedown hide the image */
 img {
   -moz-backface-visibility: hidden;
 }
-
+/* cards are layed face down */
 .front {
   -moz-transform: rotateY(180deg);
 }
-
+/* flip the card when clicked */
 .flipped {
   -moz-transform: rotateY(180deg);
 }
@@ -72,8 +73,11 @@ We cache the results of calling the 'get me a list of images of cats' call, whic
 When layout the cards we use the ICanHaz library to generate html based on the following template (in @catmatch.html@)
 
 bc.    <script type="text/html" id="cards">
+      <!-- block iterated over for each element of cards -->
       {{#cards}}
+        <!-- each element has an id, url and caption --> 
         <li class="card" data-imageid="{{id}}">
+          <!-- back and front face picutres on the card -->
           <img src="{{url}}&size=qvga" class="front" alt="{{caption}}">
           <img src="back.png" class="back">
         </li>
