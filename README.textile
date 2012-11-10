@@ -38,6 +38,7 @@ The body of the html contains screens:
 These are enclosed in @<div>@ tags
 
 h3. catmatch.css
+
 This styles our game, sets font sizes etc and all the stuff normally done with CSS. The one thing that is worth highlighting is the use of the browser vendor extentions which enable us to flip the cards.
 
 For example, the card is flipped by turning it 180 degrees on its Y axis (in 3d) and hiding any image that is faced down. This is done using the following css:
